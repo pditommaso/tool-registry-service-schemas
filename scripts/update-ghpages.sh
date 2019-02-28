@@ -5,7 +5,7 @@ set -o nounset
 set -o xtrace
 set -u
 BRANCH=$(echo "$TRAVIS_BRANCH" | awk '{print tolower($0)}')
-BRANCH_PATH="preview/$BRANCH"
+BRANCH_PATH="preview/$TRAVIS_BRANCH"
 git config --replace-all remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
 git fetch origin gh-pages
 git checkout gh-pages
